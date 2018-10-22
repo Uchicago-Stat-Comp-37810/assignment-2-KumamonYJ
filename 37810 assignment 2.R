@@ -1,4 +1,4 @@
-#37810 Assignment 2_Yi Jin step 4
+#37810 Assignment 2_Yi Jin step 5
 
 source('~/GitHub/assignment-2-KumamonYJ/function.set.R')
 
@@ -37,4 +37,31 @@ burnIn = 5000
 acceptance = 1-mean(duplicated(chain[-(1:burnIn),]))
 
 
-graphing(chain,5000,30)
+compare_outcomes=function(iteration){
+  # assign the startvalue
+  m=vector(length=10)
+  std=vector(length=10)
+  for(i in 1:10){
+    beta1=rnorm(1,5,1)
+    beta0=0
+    se=rnorm(1,10,1)
+    startvalue = c(beta1,beta0,se)
+    # apply run_metropolis_MCMC function to the startvalue and iterate for 10000 times
+    chain = run_metropolis_MCMC(startvalue, iteration)
+    m[i]=mean(chain[,1])
+    std[i]=sd(chain[,1])
+  }
+  return(c(m,std))
+}
+
+
+print("outcome of compare_outcomes(1000)")
+compare_outcomes(1000)
+
+print("outcome of compare_outcomes(10000)")
+compare_outcomes(10000)
+
+print("outcome of compare_outcomes(100000)")
+compare_outcomes(100000)
+#The first ten numbers are the mean and the last ten are std of the values in the chain for a
+
