@@ -1,4 +1,4 @@
-#37810 Assignment 2_Yi Jin step 5
+#37810 Assignment 2_Yi Jin step 6
 
 source('~/GitHub/assignment-2-KumamonYJ/function.set.R')
 
@@ -55,13 +55,13 @@ compare_outcomes=function(iteration){
 }
 
 
-print("outcome of compare_outcomes(1000)")
-compare_outcomes(1000)
+#print("outcome of compare_outcomes(1000)")
+#compare_outcomes(1000)
 
-print("outcome of compare_outcomes(10000)")
-compare_outcomes(10000)
+#print("outcome of compare_outcomes(10000)")
+#compare_outcomes(10000)
 
-print("outcome of compare_outcomes(100000)")
-compare_outcomes(100000)
+#print("outcome of compare_outcomes(100000)")
+#compare_outcomes(100000)
 #The first ten numbers are the mean and the last ten are std of the values in the chain for a
 
